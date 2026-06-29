@@ -1416,11 +1416,7 @@ figure figcaption {
   font-size: 0.78rem;
 }
 .panel-scroll--center {
-  display: flex;
-  flex-direction: column;
-}
-.panel-scroll--center > .quotes-carousel {
-  margin: auto;
+  padding-top: 2rem;
 }
 @media (max-width: 1024px) {
   .bio-grid { grid-template-columns: 1fr; }
