@@ -148,14 +148,16 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0s linear 0.45s;
   display: flex;
   flex-direction: column;
 }
 .panel.active {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.4s ease, visibility 0s linear 0s;
+  transform: translateY(0);
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0s linear 0s;
   z-index: 2;
 }
 #hero.panel {
@@ -774,8 +776,14 @@ figure figcaption {
   width: 56px; height: 56px;
   margin: 0 auto 0.9rem;
   color: var(--pink);
+  transition: var(--transition);
 }
 .phil-icon svg { width: 100%; height: 100%; }
+.phil-card:hover .phil-icon {
+  filter: drop-shadow(0 0 12px var(--pink-glow));
+  transform: scale(1.12);
+  transition: var(--transition);
+}
 .phil-card h3 {
   color: var(--pink);
   font-size: 1.05rem;
@@ -984,8 +992,13 @@ figure figcaption {
   width: 52px; height: 52px;
   margin: 0 auto 0.85rem;
   color: var(--pink);
+  transition: var(--transition);
 }
 .pow-icon svg { width: 100%; height: 100%; }
+.pow-card:hover .pow-icon {
+  filter: drop-shadow(0 0 12px var(--pink-glow));
+  transform: scale(1.12);
+}
 .pow-card h3 {
   color: var(--pink);
   font-size: 1.1rem;
@@ -1098,8 +1111,13 @@ figure figcaption {
   width: 42px; height: 42px;
   color: var(--pink);
   margin-bottom: 0.85rem;
+  transition: var(--transition);
 }
 .curr-icon svg { width: 100%; height: 100%; }
+.current-card:hover .curr-icon {
+  filter: drop-shadow(0 0 12px var(--pink-glow));
+  transform: scale(1.12);
+}
 .current-card h3 {
   color: var(--pink);
   font-size: 1rem;
