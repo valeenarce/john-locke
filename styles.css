@@ -1357,6 +1357,13 @@ figure figcaption {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.panel-scroll--center {
+  display: flex;
+  flex-direction: column;
+}
+.panel-scroll--center > .quotes-carousel {
+  margin: auto;
+}
 @media (max-width: 1024px) {
   .bio-grid { grid-template-columns: 1fr; }
   .context-grid { grid-template-columns: 1fr; }
