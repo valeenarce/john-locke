@@ -44,7 +44,7 @@
           var dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 140) {
             var opacity = (1 - dist / 140) * 0.15;
-            ctx.strokeStyle = 'rgba(201, 168, 76, ' + opacity + ')';
+            ctx.strokeStyle = 'rgba(232, 67, 147, ' + opacity + ')';
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -74,7 +74,7 @@
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(201, 168, 76, ' + p.opacity + ')';
+        ctx.fillStyle = 'rgba(232, 67, 147, ' + p.opacity + ')';
         ctx.fill();
       }
       connectParticles();

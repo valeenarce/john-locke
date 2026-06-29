@@ -464,8 +464,10 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 0.65rem;
   padding: 0.55rem 0.75rem;
-  background: rgba(58,21,40,0.4);
-  border: 1px solid rgba(232,67,147,0.08);
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
@@ -477,7 +479,7 @@ img { max-width: 100%; display: block; }
   border-color: rgba(232,67,147,0.2);
   transform: translateX(4px);
 }
-.data-icon { font-size: 1.1rem; flex-shrink: 0; }
+.data-icon { font-size: 1.1rem; flex-shrink: 0; display: flex; align-items: center; color: var(--pink); }
 .data-label { display: block; font-size: 0.6rem; color: var(--white-40); text-transform: uppercase; letter-spacing: 0.5px; }
 .data-value { display: block; font-size: 0.78rem; color: var(--white); font-weight: 500; }
 figure figcaption {
@@ -942,9 +944,13 @@ figure figcaption {
 .pillar:hover { transform: translateY(-4px); }
 .pillar-icon {
   font-size: 1.7rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 0.6rem;
+  color: var(--pink);
 }
+.pillar-icon svg { display: block; }
 .pillar h4 {
   color: var(--pink);
   font-size: 0.92rem;
@@ -1375,6 +1381,40 @@ figure figcaption {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.blockquote {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  border-left: 3px solid var(--pink);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -0.2rem;
+  left: 1rem;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  color: var(--pink);
+  opacity: 0.12;
+  line-height: 1;
+  pointer-events: none;
+}
+.blockquote p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+.blockquote cite {
+  color: var(--pink);
+  font-style: normal;
+  font-size: 0.78rem;
+}
 .panel-scroll--center {
   display: flex;
   flex-direction: column;
@@ -1427,6 +1467,11 @@ figure figcaption {
   .news-article, .analysis { padding: 1.2rem; }
   .treatise-card { padding: 1.2rem; }
   .treatise-footer { flex-direction: column; align-items: flex-start; }
+  .tl-item { padding-left: 44px; margin-bottom: 1rem; }
+  .tl-dot { left: 11px; top: 14px; width: 10px; height: 10px; }
+  .tl-content { padding: 0.85rem 1rem; }
+  .tl-content h4 { font-size: 0.85rem; }
+  .tl-content p { font-size: 0.78rem; }
   .section-nav { bottom: 1rem; padding: 0.3rem 0.4rem; }
   .sn-prev, .sn-next { width: 34px; height: 34px; }
 }
@@ -1438,4 +1483,9 @@ figure figcaption {
   .curiosities-grid { grid-template-columns: 1fr; }
   .quote-slide { padding: 1.5rem 1.25rem; }
   .rights-doc .treatise-card { padding: 1.25rem; }
+  .section-nav { gap: 0.4rem; padding: 0.25rem 0.3rem; }
+  .sn-prev, .sn-next { width: 30px; height: 30px; }
+  .sn-counter { min-width: 40px; font-size: 0.7rem; }
+  .section-header { padding: 0.4rem 0.75rem 0.1rem; }
+  .section-subtitle { font-size: 0.6rem; }
 }
